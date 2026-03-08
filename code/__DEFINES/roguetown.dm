@@ -166,6 +166,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define CTAG_INQUISITION "CAT_INQUISITION" // For Orthodoxist subclasses
 #define CTAG_PURITAN "CAT_PURITAN"
 #define CTAG_FOLKHEROES "CAT_FOLKHEROES" //For the migrant wave
+#define CTAG_COPPERGARRISON "CAT_COPPERGARRISON" //For the migrant wave
 
 #define ANY_CLASS_CTAGS list(\
 	CTAG_PILGRIM, \
@@ -198,6 +199,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define M_STEEL		M_IRON+W_MODERATE	// one steel bar
 #define M_SILVER	M_IRON*3	// one silver bar
 #define M_GOLD		M_IRON*5	// one gold bar
+#define M_COPPER	6			// one copper bar
 
 // Skill costs - a rarity value add, items requiring a high skill to produce are rarer and has more intrinsic value. So craftsmen can make a profit.
 #define SKILL_1		2
@@ -260,6 +262,7 @@ GLOBAL_LIST_EMPTY(job_respawn_delays)
 #define VALUE_BRIGANDINE			VALUE_STEEL_ITEM*2+M_CLOTH+BONUS_VALUE_TINY
 #define VALUE_FULL_PLATE			VALUE_STEEL_ITEM*3
 #define VALUE_SNOWFLAKE_STEEL		VALUE_STEEL_ARMOR+BONUS_VALUE_MODEST
+#define VALUE_COPPER_ARMOR			M_COPPER*2+BONUS_VALUE_TINY
 
 #define VALUE_LEATHER_HELMET		M_LEATHER*2+W_MINOR
 #define VALUE_CHEAP_IRON_HELMET		VALUE_IRON_SMALL_ITEM
@@ -314,6 +317,7 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 
 #define INTEGRITY_STRONGEST		500		// STEEL
 #define INTEGRITY_STRONG		300		// IRON
+#define INTEGRITY_ABOVE_AVERAGE	260		// COPPER
 #define INTEGRITY_STANDARD		200		// LEATHER
 #define INTEGRITY_POOR			150		// GAMBESON, COPPER
 #define INTEGRITY_WORST			100
@@ -337,13 +341,15 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 #define	ARMOR_LEATHER_GOOD	list("blunt" = 40, "slash" = 40, "stab" = 40, "piercing" = 20, "fire" = 0, "acid" = 0)
 
 // Medium AC
+#define ARMOR_MAILLE_COPPER	list("blunt" = 40, "slash" = 40, "stab" = 45, "piercing" = 25, "fire" = 0, "acid" = 0)
 #define ARMOR_MAILLE_IRON	list("blunt" = 45, "slash" = 45, "stab" = 50, "piercing" = 30, "fire" = 0, "acid" = 0)
 #define ARMOR_MAILLE		list("blunt" = 55, "slash" = 55, "stab" = 55, "piercing" = 40, "fire" = 0, "acid" = 0)
 #define ARMOR_MAILLE_GOOD	list("blunt" = 60, "slash" = 60, "stab" = 60, "piercing" = 45, "fire" = 0, "acid" = 0)
 #define ARMOR_SCALE			list("blunt" = 65, "slash" = 65, "stab" = 65, "piercing" = 65, "fire" = 0, "acid" = 0)
 #define ARMOR_BRIGANDINE	list("blunt" = 70, "slash" = 70, "stab" = 70, "piercing" = 50, "fire" = 0, "acid" = 0)
 
-// Heavy AC
+// Heavy
+#define ARMOR_PLATE_TERRIBLE	list("blunt" = 50, "slash" = 60, "stab" = 45, "piercing" = 40, "fire" = 0, "acid" = 5)
 #define ARMOR_PLATE_BAD		list("blunt" = 75, "slash" = 75, "stab" = 75, "piercing" = 55, "fire" = 0, "acid" = 0)
 #define ARMOR_PLATE			list("blunt" = 85, "slash" = 85, "stab" = 85, "piercing" = 70, "fire" = 0, "acid" = 0)
 #define ARMOR_PLATE_SILVER	list("blunt" = 85, "slash" = 85, "stab" = 85, "piercing" = 80, "fire" = 0, "acid" = 0)
@@ -365,6 +371,7 @@ Thing can move up or down an armor class by significant changes to coverage & cr
 #define ARMOR_LEATHER_STUDDED list("blunt" = 80, "slash" = 80, "stab" = 60, "piercing" = 20, "fire" = 0, "acid" = 0)
 
 // Medium AC | Chest
+#define ARMOR_CUIRASS_POOR list("blunt" = 35, "slash" = 80, "stab" = 60, "piercing" = 20, "fire" = 0, "acid" = 0)
 #define ARMOR_CUIRASS list("blunt" = 40, "slash" = 100, "stab" = 80, "piercing" = 40, "fire" = 0, "acid" = 0)
 #define ARMOR_PLATE_BSTEEL list("blunt" = 80, "slash" = 100, "stab" = 90, "piercing" = 80, "fire" = 0, "acid" = 0) // It's EVIL. OH GOD.
 

@@ -88,6 +88,27 @@
 	additional_items = list(/obj/item/ingot/copper)
 	created_item = /obj/item/weapon/sword/long/rider/copper
 
+/datum/anvil_recipe/weapons/copper/claymore
+	name = "Copper Claymore (+2 Copper Bar)"
+	recipe_name = "a large copper claymore"
+	additional_items = list(/obj/item/ingot/copper, /obj/item/ingot/copper)
+	created_item = /obj/item/weapon/sword/long/greatsword/copperclaymore
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/copper/halberd
+	name = "Copper Halberd (+ Copper Bar + Small Log)"
+	recipe_name = "a long copper halberd"
+	additional_items = list(/obj/item/ingot/copper, /obj/item/grown/log/tree/small)
+	created_item = /obj/item/weapon/polearm/halberd/copper
+	craftdiff = 2
+
+/datum/anvil_recipe/weapons/copper/copper_bullet
+	name = "4x Copper Bullet"
+	recipe_name = "a handful of copper bullets"
+	created_item = /obj/item/ammo_casing/caseless/bullet/copper
+	craftdiff = 1
+	createditem_extra = 3
+
 // --------- BRONZE -----------
 /datum/anvil_recipe/weapons/bronze
 	abstract_type = /datum/anvil_recipe/weapons/bronze

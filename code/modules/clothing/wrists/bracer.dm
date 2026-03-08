@@ -143,3 +143,16 @@
 	else
 		user.visible_message(span_warning("[user] stops reshaping [src]."))
 		return
+
+//................ Neu Copper ............... //
+
+/obj/item/clothing/wrists/bracers/copper/vambraces
+	name = "copper plate vambraces"
+	desc = "Cheaper varient of vambraces for those desperate, it offers moderate protection."
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_neucopper.dmi'
+	icon_state = "copper_bracers"
+	item_state = "copper_bracers"
+	armor = ARMOR_MAILLE_COPPER
+	max_integrity = INTEGRITY_ABOVE_AVERAGE
+	body_parts_covered = ARMS

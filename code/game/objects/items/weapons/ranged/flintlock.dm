@@ -484,3 +484,115 @@
 	else if(easy_dismember)
 		return probability * 1.5
 	return probability
+
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crankgun
+	name = "copper crank gun"
+	desc = "a gun of cheap make, a small assortment of copper cogs allows it to crank up its mechanism to fire."
+	icon = 'icons/roguetown/weapons/32/guns.dmi'
+	lefthand_file = 'icons/mob/inhands/weapons/coppershot_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/weapons/coppershot_righthand.dmi'
+	icon_state = "copper_shot0"
+	item_state = "copper_shot"
+	possible_item_intents = list(/datum/intent/shoot/crossbow, INTENT_GENERIC)
+	mag_type = /obj/item/ammo_box/magazine/internal/shot/copperbullet
+	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_HIP
+	w_class = WEIGHT_CLASS_NORMAL
+	randomspread = 1
+	spread = 1
+	can_parry = TRUE
+	bigboy = FALSE
+	experimental_inhand = FALSE
+	experimental_onback = FALSE
+	var/chargingspeed = 40
+	var/reloadtime = 60
+	var/movingreload = FALSE
+	var/hasloadedsprite = FALSE
+
+
+
+	force = 3
+	var/cocked = FALSE
+	cartridge_wording = "copper shot"
+	load_sound = 'sound/foley/nockarrow.ogg'
+	fire_sound = 'sound/combat/Ranged/crossbow-small-shot-02.ogg'
+	equip_sound = 'sound/foley/gun_equip.ogg'
+	pickup_sound = 'sound/foley/gun_equip.ogg'
+	drop_sound = 'sound/foley/gun_drop.ogg'
+
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crankgun/shoot_with_empty_chamber()
+	if(cocked)
+		playsound(src, 'sound/combat/Ranged/crossbow-small-shot-02.ogg', 100, FALSE)
+		cocked = FALSE
+		update_appearance(UPDATE_ICON_STATE)
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crankgun/attack_self(mob/living/user, list/modifiers)
+	if(chambered)
+		return ..()
+
+	if(!cocked)
+		to_chat(user, span_info("I begin cranking the mechanism.."))
+		if(!movingreload)
+			if(do_after(user, reloadtime - user.STASTR, target = user))
+				playsound(user, 'sound/foley/winding.ogg', 100, FALSE)
+				cocked = TRUE
+		else
+			if(do_after(user, reloadtime - user.STASTR, user, timed_action_flags = (IGNORE_USER_LOC_CHANGE|IGNORE_TARGET_LOC_CHANGE|IGNORE_HELD_ITEM|IGNORE_USER_DIR_CHANGE)))
+				playsound(user, 'sound/foley/winding.ogg', 100, FALSE)
+				cocked = TRUE
+	else
+		to_chat(user, span_warning("I slowly unwind the mechanism"))
+		cocked = FALSE
+
+	update_appearance(UPDATE_ICON_STATE)
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crankgun/attackby(obj/item/A, mob/user, list/modifiers)
+	if(istype(A, /obj/item/ammo_box) || istype(A, /obj/item/ammo_casing))
+		if(cocked)
+			return ..()
+		to_chat(user, span_warning("I need to crank the gun first."))
+
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crankgun/process_fire(atom/target, mob/living/user, message = TRUE, list/modifiers, zone_override, bonus_spread = 0)
+	if(user.client)
+		if(user.client.chargedprog >= 100)
+			spread = 0
+		else
+			spread = 150 - (150 * (user.client.chargedprog / 100))
+	else
+		spread = 0
+	for(var/obj/item/ammo_casing/CB in get_ammo_list(FALSE, TRUE))
+		var/obj/projectile/BB = CB.BB
+		if(user.client)
+			if(user.client.chargedprog >= 100)
+				BB.accuracy += 15 //better accuracy for fully aiming
+		if(user.STAPER > 8)
+			BB.accuracy += (user.STAPER - 8) * 4 //each point of perception above 8 increases standard accuracy by 4.
+			BB.bonus_accuracy += (user.STAPER - 8) //Also, increases bonus accuracy by 1, which cannot fall off due to distance.
+			if(user.STAPER > 10)
+				BB.damage = BB.damage * (user.STAPER / 10)
+		BB.damage *= damfactor // Apply damfactor multiplier regardless of PER.
+		BB.bonus_accuracy += (user.get_skill_level(/datum/skill/combat/firearms, TRUE) * 3) //+3 accuracy per level in firearms
+	cocked = FALSE
+	. = ..()
+	if(.)
+		if(istype(user) && user.mind)
+			var/modifier = 1.25/(spread+1)
+			var/boon = user.get_learning_boon(/datum/skill/combat/firearms)
+			var/amt2raise = user.STAINT/2
+			user.adjust_experience(/datum/skill/combat/firearms, amt2raise * boon * modifier, FALSE)
+
+/obj/item/gun/ballistic/revolver/grenadelauncher/crankgun/update_icon_state()
+	. = ..()
+	if(cocked)
+		icon_state = "copper_shot1"
+	else
+		icon_state = "copper_shot0"
+
+
+/obj/item/ammo_box/magazine/internal/shot/copperbullet
+	ammo_type = /obj/item/ammo_casing/caseless/bullet
+	caliber = "copper_bullet"
+	max_ammo = 1
+	start_empty = TRUE

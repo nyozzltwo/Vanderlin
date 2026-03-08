@@ -106,3 +106,17 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sellprice = 0 // See above comment
+
+//................ Neu Copper ............... //
+
+/obj/item/clothing/gloves/plate/copper
+	name = "copper plate gauntlets"
+	desc = "Plated gauntlets made out of copper. Mediocre protection"
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_neucopper.dmi'
+	icon_state = "copper_gauntlets"
+	item_state = "copper_gauntlets"
+	sellprice = VALUE_COPPER_ARMOR
+	armor = ARMOR_PLATE_TERRIBLE
+	max_integrity = INTEGRITY_ABOVE_AVERAGE
+	item_weight = 4 * IRON_MULTIPLIER

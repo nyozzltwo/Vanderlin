@@ -181,3 +181,44 @@
 	roles = list(
 		/datum/migrant_role/advclass/folkhero = 1,
 	)
+
+/datum/migrant_role/advclass/copper_legion
+	name = "Copper Soldier"
+	migrant_job = /datum/job/copper_legion
+	advclass_cat_rolls = list(CTAG_COPPERGARRISON = 4)
+
+/datum/migrant_wave/copper_legion
+	name = "Copper Legion"
+	max_spawns = 1
+	downgrade_wave = /datum/migrant_wave/copper_legion_down_one
+	weight = 15
+	roles = list(
+		/datum/migrant_role/advclass/copper_legion = 4,
+	)
+	greet_text = "The copper legion is what we call ourselves, but in reality we are just a band of beggars, inhumen, and people without direction.. youve come to this town to make yourself a fortune while remaining ordained in your copper equipment."
+
+/datum/migrant_wave/copper_legion_down_one
+	name = "Copper Legion"
+	downgrade_wave = /datum/migrant_wave/copper_legion_down_two
+	can_roll = FALSE
+	roles = list(
+		/datum/migrant_role/advclass/copper_legion = 3,
+	)
+	greet_text = "The copper legion is what we call ourselves, but in reality we are just a band of beggars, inhumen, and people without direction.. youve come to this town to make yourself a fortune while remaining ordained in your copper equipment."
+
+/datum/migrant_wave/copper_legion_down_two
+	name = "Copper Legion"
+	downgrade_wave = /datum/migrant_wave/copper_legion_down_three
+	can_roll = FALSE
+	roles = list(
+		/datum/migrant_role/advclass/copper_legion = 2,
+	)
+	greet_text = "The copper legion is what we call ourselves, but in reality we are just a band of beggars, inhumen, and people without direction.. youve come to this town to make yourself a fortune while remaining ordained in your copper equipment."
+
+/datum/migrant_wave/copper_legion_down_three
+	name = "Copper Legion"
+	can_roll = FALSE
+	roles = list(
+		/datum/migrant_role/advclass/copper_legion = 1,
+	)
+	greet_text = "The copper legion is what we call ourselves, but in reality we are just a band of beggars, inhumen, and people without direction.. youve come to this town to make yourself a fortune while remaining ordained in your copper equipment."

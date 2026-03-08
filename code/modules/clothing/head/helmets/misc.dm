@@ -625,3 +625,40 @@
 	else
 		user.visible_message(span_warning("[user] stops reshaping [src]."))
 		return
+
+//................ Neu Copper ............... //
+
+/obj/item/clothing/head/helmet/sallet/copper
+	name = "copper sallet"
+	desc = "a cheap copper sallet usually adorned by wannabe adventurers or for cheap protection, it offers moderate protection."
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	icon_state = "csallet"
+	item_state = "csallet"
+	sellprice = VALUE_COPPER_ARMOR
+	armor = ARMOR_PLATE_TERRIBLE
+	max_integrity = INTEGRITY_ABOVE_AVERAGE
+	item_weight = 6
+	body_parts_covered = COVERAGE_HEAD
+
+
+/obj/item/clothing/head/helmet/visored/sallet/copper
+	name = "copper visored sallet"
+	desc = "a cheap copper sallet, this one appears to have a flexible visor that can be flipped up and down.. it offers moderate protection."
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	icon_state = "csallet_visor"
+	item_state = "csallet_visor"
+	sellprice = VALUE_COPPER_ARMOR*2
+	armor = ARMOR_PLATE_TERRIBLE
+	max_integrity = INTEGRITY_ABOVE_AVERAGE
+	item_weight = 7 * IRON_MULTIPLIER
+
+/obj/item/clothing/head/helmet/visored/copper/knight  //for some reason knight/copper borks it but copper/knight doesnt..
+	name = "copper knights helmet"
+	desc = "a cheap version of a knights helmet, this one has a visor that allows it to flip up and down. it offers moderate protection."
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	icon_state = "cknight"
+	item_state = "cknight"
+	sellprice = VALUE_COPPER_ARMOR*2
+	armor = ARMOR_PLATE_BAD
+	max_integrity = INTEGRITY_STRONG
+	item_weight = 8 * IRON_MULTIPLIER

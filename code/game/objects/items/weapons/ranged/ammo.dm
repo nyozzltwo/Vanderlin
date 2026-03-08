@@ -1,9 +1,11 @@
 #define BLOWDART_DAMAGE		20
 #define ARROW_DAMAGE		33
 #define BOLT_DAMAGE			44
+#define COPPER_BULLET_DAMAGE 30
 #define BULLET_DAMAGE		80
 #define ARROW_PENETRATION	25
 #define BOLT_PENETRATION	50
+#define COPPER_BULLET_PENETRATION 40
 #define BULLET_PENETRATION	100
 
 /*------\
@@ -611,6 +613,39 @@
 	icon_state = "grapeshot" // NEEDS SPRITE
 	dropshrink = 0.5
 	projectile_type = /obj/projectile/bullet/fragment
+
+//................ Copper Bullet ............... //
+/obj/projectile/bullet/reusable/bullet/copper
+	name = "copper shot"
+	desc = "A small cheaply made ball of copper, for use with a copper crank gun."
+	damage = COPPER_BULLET_DAMAGE
+	damage_type = BRUTE
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "copper_bullet"
+	ammo_type = /obj/item/ammo_casing/caseless/bullet/copper
+	range = 10
+	jitter = 3
+	eyeblur = 0
+	hitsound = 'sound/combat/hits/hi_bolt (2).ogg'
+	embedchance = 100
+	woundclass = BCLASS_SHOT
+	impact_effect_type = /obj/effect/temp_visual/impact_effect
+	flag =  "piercing"
+	armor_penetration = COPPER_BULLET_PENETRATION
+	speed = 0.3
+	accuracy = 40 //Lower accuracy than an arrow.
+	reduce_crit_chance = 6 //Reduces crit chance
+	dismemberment = 0 //Can't dismember
+
+/obj/item/ammo_casing/caseless/bullet/copper
+	name = "copper shot"
+	desc = "A small cheaply made ball of copper, for use with a copper crank gun."
+	projectile_type = /obj/projectile/bullet/reusable/bullet/copper
+	caliber = "copper_bullet"
+	icon = 'icons/roguetown/weapons/ammo.dmi'
+	icon_state = "copper_bullet"
+	possible_item_intents = list(INTENT_USE)
+	force = DAMAGE_KNIFE - 10
 
 /*------\
 | Darts |

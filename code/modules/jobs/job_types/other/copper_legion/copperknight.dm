@@ -1,0 +1,59 @@
+/datum/job/advclass/copper_legion/copperknight //Leader of the copper legion.
+	title = "Copper Knight"
+	tutorial = "you were poor, scum of society. you changed your life around forming a roaming band known as the copper legion, you will lead them to fame and fortune"
+	outfit = /datum/outfit/copper_legion/copperknight
+	total_positions = 1
+	category_tags = list(CTAG_COPPERGARRISON)
+	cmode_music = 'sound/music/cmode/towner/CombatBeggar.ogg'
+
+	jobstats = list(
+		STATKEY_STR = 2,
+		STATKEY_END = 2,
+		STATKEY_CON = 2,
+		STATKEY_PER = 1,
+		STATKEY_SPD = 1,
+	)
+
+	skills = list(
+		/datum/skill/combat/polearms = 3,
+		/datum/skill/combat/shields = 2,
+		/datum/skill/combat/wrestling = 2,
+		/datum/skill/combat/unarmed = 2,
+		/datum/skill/combat/swords = 3,
+		/datum/skill/combat/firearms = 1,
+		/datum/skill/craft/crafting = 2,
+		/datum/skill/misc/reading = 1,
+		/datum/skill/misc/climbing = 3,
+		/datum/skill/misc/athletics = 2,
+		/datum/skill/misc/medicine = 1,
+	)
+
+	traits = list(
+		TRAIT_HEAVYARMOR,
+	)
+
+/datum/job/advclass/copper_legion/copperknight/after_spawn(mob/living/carbon/human/spawned, client/player_client)
+	. = ..()
+	var/static/list/weapons = list(
+		"Claymore" = list(/obj/item/weapon/sword/long/greatsword/copperclaymore),
+		"Halberd & Shield" = list(/obj/item/weapon/polearm/halberd/copper, /obj/item/weapon/shield/wood/crafted),
+	)
+
+	spawned.select_equippable(player_client, weapons, message = "Choose your weapon.", title = "TAKE UP ARMS.")
+
+
+/datum/outfit/copper_legion/copperknight
+	name = "Copper Knight (Migrant)"
+	beltl = /obj/item/flashlight/flare/torch/lantern/copper
+	gloves = /obj/item/clothing/gloves/plate/copper
+	wrists = /obj/item/clothing/wrists/bracers/copper/vambraces
+	belt = /obj/item/storage/belt/leather
+	pants = /obj/item/clothing/pants/platelegs/copper
+	shirt = /obj/item/clothing/armor/gambeson
+	shoes = /obj/item/clothing/shoes/boots/armor/copper
+	backr = /obj/item/storage/backpack/satchel
+	backpack_contents = list(/obj/item/needle/thorn = 1, /obj/item/natural/cloth = 1, /obj/item/paper/scroll = 1, /obj/item/natural/feather, /obj/item/reagent_containers/glass/bottle/waterskin = 1)
+	mask = /obj/item/clothing/face/facemask/copper
+	neck = /obj/item/clothing/neck/gorget/copper
+	head = /obj/item/clothing/head/helmet/visored/copper/knight
+	armor = /obj/item/clothing/armor/plate/full/copper

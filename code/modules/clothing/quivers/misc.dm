@@ -48,9 +48,20 @@
 	slot_flags = ITEM_SLOT_HIP|ITEM_SLOT_NECK
 	max_storage = 10
 	ammo_type = list(/obj/item/ammo_casing/caseless/bullet)
-	
+
 /obj/item/ammo_holder/bullet/bullets
 	fill_type = /obj/item/ammo_casing/caseless/bullet
+
+/obj/item/ammo_holder/bullet/copper
+	name = "copper lined bullet pouch"
+	icon_state = "dartpouch0"
+	item_state = "dartpouch"
+	slot_flags = ITEM_SLOT_HIP
+	max_storage = 8
+	ammo_type = list(/obj/item/ammo_casing/caseless/bullet/copper)
+
+/obj/item/ammo_holder/bullet/copper/bullets
+	fill_type = /obj/item/ammo_casing/caseless/bullet/copper
 
 /obj/item/ammo_holder/dartpouch
 	name = "dart pouch"

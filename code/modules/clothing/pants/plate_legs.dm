@@ -138,3 +138,21 @@
 /obj/item/clothing/pants/platelegs/silver/Initialize(mapload)
 	. = ..()
 	enchant(/datum/enchantment/silver)
+
+//................ Neu Copper ............... //
+
+
+/obj/item/clothing/pants/platelegs/copper
+	name = "copper plated chausses"
+	desc = "Chausses made of plated copper, slightly more comfortable than iron, offers less protection."
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_neucopper.dmi'
+	sleevetype = "leg"
+	icon_state = "cplate_legs"
+	item_state = "cplate_legs"
+	smeltresult = /obj/item/ingot/copper
+	item_weight = 6 * IRON_MULTIPLIER
+	sellprice = VALUE_COPPER_ARMOR
+	armor = ARMOR_PLATE_TERRIBLE
+	max_integrity = INTEGRITY_ABOVE_AVERAGE
+	body_parts_covered = LEGS

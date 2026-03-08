@@ -215,3 +215,31 @@
 	name = "Psydonic Endurance"
 	desc = "I am protected by blessed Psydonian plate armor."
 	icon_state = "buff"
+
+//................ Neu Copper ............... //
+
+
+/obj/item/clothing/armor/plate/full/copper
+	name = "copper plate armor"
+	desc = "Full copper plate. feels a tad brittle but it will do."
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	icon_state = "copperplate"
+	item_state = "copperplate"
+	sellprice = VALUE_COPPER_ARMOR*2
+	smeltresult = /obj/item/ingot/copper
+
+	armor = ARMOR_PLATE_TERRIBLE
+	max_integrity = INTEGRITY_ABOVE_AVERAGE
+	item_weight = 8 * IRON_MULTIPLIER
+
+/obj/item/clothing/armor/plate/copper
+	name = "copper half-plate"
+	desc = "Copper plate armor, a cheap substitute for other half plates."
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	icon_state = "c_halfplate"
+	item_state = "c_halfplate"
+	smeltresult = /obj/item/ingot/copper
+	sellprice = VALUE_COPPER_ARMOR
+	armor = ARMOR_PLATE_TERRIBLE
+	max_integrity = INTEGRITY_ABOVE_AVERAGE
+	item_weight = 7 * IRON_MULTIPLIER

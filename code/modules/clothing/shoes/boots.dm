@@ -228,3 +228,19 @@
 	mob_overlay_icon = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sleeved = 'icons/roguetown/clothing/special/onmob/evilarmor.dmi'
 	sellprice = 0 // See above comment
+
+//................ Neu Copper ............... //
+
+/obj/item/clothing/shoes/boots/armor/copper
+	name = "copper plated boots"
+	desc = "leather boots plated in copper to offer a small amount of protection"
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	mob_overlay_icon = 'icons/roguetown/clothing/onmob/feet.dmi'
+	sleeved = 'icons/roguetown/clothing/onmob/helpers/sleeves_neucopper.dmi'
+	icon_state = "copper_armorboots"
+	item_state = "copper_armorboots"
+	smeltresult = /obj/item/ingot/copper
+	item_weight = 5 * IRON_MULTIPLIER
+	sellprice = VALUE_COPPER_ARMOR
+	armor = ARMOR_PLATE_TERRIBLE
+	max_integrity = INTEGRITY_ABOVE_AVERAGE

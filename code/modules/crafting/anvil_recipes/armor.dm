@@ -33,6 +33,54 @@
 	recipe_name = "a mask of copper"
 	created_item = /obj/item/clothing/face/facemask/copper
 
+/datum/anvil_recipe/armor/copper/fullplate
+	name = "Copper full plate(+3 Copper Bar)"
+	recipe_name = "a full copper plate"
+	created_item = /obj/item/clothing/armor/plate/full/copper
+	additional_items = list(/obj/item/ingot/copper, /obj/item/ingot/copper, /obj/item/ingot/copper)
+	craftdiff = 2
+
+/datum/anvil_recipe/armor/copper/plate
+	name = "Copper Half plate (+2 Copper Bar )"
+	recipe_name = "a half copper plate"
+	created_item = /obj/item/clothing/armor/plate/copper
+	additional_items = list(/obj/item/ingot/copper, /obj/item/ingot/copper)
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/copper/curiassfull
+	name = "Copper Curiass(+ Copper Bar +2 cloth)"
+	recipe_name = "a full copper curiass"
+	created_item = /obj/item/clothing/armor/cuirass/copper
+	additional_items = list(/obj/item/ingot/copper, /obj/item/natural/cloth, /obj/item/natural/cloth)
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/copper/glove
+	name = "2X Copper Plate Gauntlets"
+	recipe_name = "a simple pair of gauntlets"
+	created_item = /obj/item/clothing/gloves/plate/copper
+	createditem_extra = 1
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/copper/vambraces
+	name = "2X Copper Plate Vambraces"
+	recipe_name = "a simple pair of vambraces"
+	created_item = /obj/item/clothing/wrists/bracers/copper/vambraces
+	createditem_extra = 1
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/copper/platelegs
+	name = "Copper Plate Legs"
+	recipe_name = "a simple pair of copper plated pants"
+	created_item = /obj/item/clothing/pants/platelegs/copper
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/copper/plateboot
+	name = "Copper Plated Boots (+ cloth)"
+	recipe_name = "a pair of leather boots surrounded with copper plating"
+	created_item = /obj/item/clothing/shoes/boots/armor/copper
+	additional_items = list(/obj/item/natural/cloth)
+
+
 // NECK ARMOR
 /datum/anvil_recipe/armor/copper/gorget
 	name = "Copper neck protector"
@@ -44,6 +92,26 @@
 	name = "Lamellar cap"
 	recipe_name = "a copper cap"
 	created_item = /obj/item/clothing/head/helmet/coppercap
+
+/datum/anvil_recipe/armor/copper/sallet
+	name = "Copper Sallet"
+	recipe_name = "a simple copper sallet"
+	created_item = /obj/item/clothing/head/helmet/sallet/copper
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/copper/sallet_visor
+	name = "Copper Visored Sallet (+ Copper Bar)"
+	recipe_name = "a simple visored copper sallet"
+	created_item = /obj/item/clothing/head/helmet/visored/sallet/copper
+	additional_items = list(/obj/item/ingot/copper)
+	craftdiff = 1
+
+/datum/anvil_recipe/armor/copper
+	name = "Copper Knight Helmet (+2 Copper Bar)"
+	recipe_name = "a cheap knights helmet"
+	created_item = /obj/item/clothing/head/helmet/visored/copper/knight
+	additional_items = list(/obj/item/ingot/copper, /obj/item/ingot/copper)
+	craftdiff = 1
 
 //////////////////////////////////////////////////////////////////////////////////////////////
 // --------- BRONZE -----------

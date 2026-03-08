@@ -132,3 +132,17 @@
 	icon_state = "ornatecuirass"
 	desc = "An ornate steel cuirass with tassets, favored by both the Oratorium Throni Vacui and the Order of the Silver Psycross. \
 			Made to endure."
+
+//................ Neu Copper ............... //
+
+/obj/item/clothing/armor/cuirass/copper
+	name = "copper plated cuirass"
+	desc = "a cheaper alternative to the stander cuirass made from copper, it offers moderate defence."
+	icon = 'icons/roguetown/clothing/neucopper_armor.dmi'
+	icon_state = "c_cuirass"
+	item_state = "c_cuirass"
+	smeltresult = /obj/item/ingot/copper
+	item_weight = 8 * IRON_MULTIPLIER
+	sellprice = VALUE_COPPER_ARMOR*2
+	armor = ARMOR_CUIRASS_POOR
+	max_integrity = INTEGRITY_ABOVE_AVERAGE
