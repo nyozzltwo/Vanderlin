@@ -494,7 +494,7 @@
 	righthand_file = 'icons/mob/inhands/weapons/coppershot_righthand.dmi'
 	icon_state = "copper_shot0"
 	item_state = "copper_shot"
-	possible_item_intents = list(/datum/intent/shoot/crossbow, INTENT_GENERIC)
+	possible_item_intents = list(/datum/intent/shoot/musket, INTENT_GENERIC)
 	mag_type = /obj/item/ammo_box/magazine/internal/shot/copperbullet
 	slot_flags = ITEM_SLOT_BACK | ITEM_SLOT_HIP
 	w_class = WEIGHT_CLASS_NORMAL
@@ -508,6 +508,7 @@
 	var/reloadtime = 60
 	var/movingreload = FALSE
 	var/hasloadedsprite = FALSE
+	sellprice = 45
 
 
 

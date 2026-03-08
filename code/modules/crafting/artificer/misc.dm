@@ -139,6 +139,14 @@
 	i_type = "Weapons"
 	category = "Weapons"
 
+/datum/artificer_recipe/weapons/crankgun
+	name = "Copper CrankGun (+3 Bronze Gears +2 Copper Bars)"
+	required_item = /obj/item/grown/log/tree/small
+	created_item = /obj/item/gun/ballistic/revolver/grenadelauncher/crankgun
+	additional_items = list(/obj/item/gear/metal/bronze = 3, /obj/item/ingot/copper = 2)
+	hammers_per_item = 9
+	craftdiff = 3
+
 /datum/artificer_recipe/weapons/crossbow
 	name = "Crossbow (+1 Steel) (+2 Fibers)"
 	required_item = /obj/item/natural/wood/plank
