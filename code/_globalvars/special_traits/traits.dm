@@ -344,11 +344,11 @@
 /datum/special_trait/blueblood
 	name = "Noble Lineage"
 	greet_text = span_notice("I come of noble blood.")
-	restricted_traits = list(TRAIT_NOBLE)
+	restricted_traits = list(TRAIT_NOBLE_BLOOD)
 	weight = 100
 
 /datum/special_trait/blueblood/on_apply(mob/living/carbon/human/character, silent)
-	ADD_TRAIT(character, TRAIT_NOBLE, "[type]")
+	ADD_TRAIT(character, TRAIT_NOBLE_BLOOD, "[type]")
 	character.adjust_skillrank(/datum/skill/misc/reading, 2, TRUE)
 
 /datum/special_trait/burdened
@@ -357,7 +357,7 @@
 	weight = 10
 	allowed_patrons = list(/datum/patron/divine/malum)
 	req_text = "Worship Malum, must be a carpenter, elder, smith, artificer or miner."
-	allowed_jobs = list(/datum/job/carpenter, /datum/job/armorsmith, /datum/job/weaponsmith, /datum/job/artificer, /datum/job/bapprentice, /datum/job/miner, /datum/job/town_elder) // no combat roles
+	allowed_jobs = list(/datum/job/carpenter, /datum/job/blacksmith, /datum/job/artificer, /datum/job/bapprentice, /datum/job/miner, /datum/job/town_elder) // no combat roles
 
 /datum/special_trait/burdened/on_apply(mob/living/carbon/human/character, silent)
 	ADD_TRAIT(character, TRAIT_MALUMFIRE, "[type]")
@@ -877,7 +877,7 @@
 	var/holder = character.patron?.devotion_holder
 	if(holder)
 		var/datum/devotion/devotion = new holder()
-		devotion.make_churching()
+		devotion.make_churchling()
 		devotion.grant_to(character)
 	character.mind.special_items["Baotha's Gift"] = /obj/item/clothing/head/corruptflower
 	character.AddComponent(/datum/component/theme_music)
