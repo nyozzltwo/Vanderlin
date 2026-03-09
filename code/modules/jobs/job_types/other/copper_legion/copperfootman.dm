@@ -1,6 +1,6 @@
 /datum/job/advclass/copper_legion/copperfootman//Copper ordained footman of the legion.
 	title = "Copper Footman"
-	tutorial = "you were poor, scum of society. you changed your life around forming a roaming band known as the copper legion, you will lead them to fame and fortune"
+	tutorial = "you were a mere beggar, on the streets.. a roaming band came through.. you managed to join up with them."
 	outfit = /datum/outfit/copper_legion/copperfootman
 	total_positions = 2
 	category_tags = list(CTAG_COPPERGARRISON)
