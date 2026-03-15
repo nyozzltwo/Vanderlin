@@ -574,15 +574,15 @@
 			if(user.STAPER > 10)
 				BB.damage = BB.damage * (user.STAPER / 10)
 		BB.damage *= damfactor // Apply damfactor multiplier regardless of PER.
-		BB.bonus_accuracy += (user.get_skill_level(/datum/skill/combat/firearms, TRUE) * 3) //+3 accuracy per level in firearms
+		BB.bonus_accuracy += (user.get_skill_level(/datum/attribute/skill/combat/firearms, TRUE) * 3) //+3 accuracy per level in firearms
 	cocked = FALSE
 	. = ..()
 	if(.)
 		if(istype(user) && user.mind)
 			var/modifier = 1.25/(spread+1)
-			var/boon = user.get_learning_boon(/datum/skill/combat/firearms)
+			var/boon = user.get_learning_boon(/datum/attribute/skill/combat/firearms)
 			var/amt2raise = user.STAINT/2
-			user.adjust_experience(/datum/skill/combat/firearms, amt2raise * boon * modifier, FALSE)
+			user.adjust_experience(/datum/attribute/skill/combat/firearms, amt2raise * boon * modifier, FALSE)
 
 /obj/item/gun/ballistic/revolver/grenadelauncher/crankgun/update_icon_state()
 	. = ..()

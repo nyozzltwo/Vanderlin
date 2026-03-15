@@ -6,26 +6,24 @@
 	category_tags = list(CTAG_COPPERGARRISON)
 	cmode_music = 'sound/music/cmode/towner/CombatBeggar.ogg'
 
-	jobstats = list(
+/datum/attribute_holder/sheet/job/copperknight
+	raw_attribute_list = list(
 		STATKEY_STR = 2,
 		STATKEY_END = 2,
 		STATKEY_CON = 2,
 		STATKEY_PER = 1,
 		STATKEY_SPD = 1,
-	)
-
-	skills = list(
-		/datum/skill/combat/polearms = 3,
-		/datum/skill/combat/shields = 2,
-		/datum/skill/combat/wrestling = 2,
-		/datum/skill/combat/unarmed = 2,
-		/datum/skill/combat/swords = 3,
-		/datum/skill/combat/firearms = 1,
-		/datum/skill/craft/crafting = 2,
-		/datum/skill/misc/reading = 1,
-		/datum/skill/misc/climbing = 3,
-		/datum/skill/misc/athletics = 2,
-		/datum/skill/misc/medicine = 1,
+		/datum/attribute/skill/combat/polearms = 30,
+		/datum/attribute/skill/combat/shields = 20,
+		/datum/attribute/skill/combat/wrestling = 20,
+		/datum/attribute/skill/combat/unarmed = 20,
+		/datum/attribute/skill/combat/swords = 30,
+		/datum/attribute/skill/combat/firearms = 10,
+		/datum/attribute/skill/craft/crafting = 20,
+		/datum/attribute/skill/misc/reading = 10,
+		/datum/attribute/skill/misc/climbing = 30,
+		/datum/attribute/skill/misc/athletics = 20,
+		/datum/attribute/skill/misc/medicine = 10,
 	)
 
 	traits = list(
