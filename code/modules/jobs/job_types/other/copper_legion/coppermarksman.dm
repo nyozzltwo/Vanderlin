@@ -6,12 +6,18 @@
 	category_tags = list(CTAG_COPPERGARRISON)
 	cmode_music = 'sound/music/cmode/towner/CombatBeggar.ogg'
 
+	attribute_sheet = /datum/attribute_holder/sheet/job/coppermarksman
+
+	traits = list(
+		TRAIT_MEDIUMARMOR,
+	)
+
 /datum/attribute_holder/sheet/job/coppermarksman
 	raw_attribute_list = list(
-		STATKEY_STR = -1,
-		STATKEY_END = 1,
-		STATKEY_PER = 2,
-		STATKEY_SPD = 1,
+		STAT_STRENGTH = -1,
+		STAT_ENDURANCE = 1,
+		STAT_PERCEPTION = 2,
+		STAT_SPEED = 1,
 		/datum/attribute/skill/combat/shields = 30,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/combat/unarmed = 10,
@@ -24,11 +30,6 @@
 		/datum/attribute/skill/misc/athletics = 30,
 		/datum/attribute/skill/misc/medicine = 20,
 	)
-
-	traits = list(
-		TRAIT_MEDIUMARMOR
-	)
-
 
 /datum/outfit/copper_legion/coppermarksman
 	name = "Copper Marksman (Migrant)"

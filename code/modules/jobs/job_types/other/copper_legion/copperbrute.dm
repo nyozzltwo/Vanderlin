@@ -6,14 +6,21 @@
 	category_tags = list(CTAG_COPPERGARRISON)
 	cmode_music = 'sound/music/cmode/towner/CombatBeggar.ogg'
 
+	attribute_sheet = /datum/attribute_holder/sheet/job/copperbrute
+
+	traits = list(
+		TRAIT_HEAVYARMOR,
+		TRAIT_NOPAIN,
+	)
+
 /datum/attribute_holder/sheet/job/copperbrute
 	raw_attribute_list = list(
-		STATKEY_STR = 3,
-		STATKEY_END = 2,
-		STATKEY_CON = 2,
-		STATKEY_INT = -2,
-		STATKEY_PER = -2,
-		STATKEY_SPD = -1
+		STAT_STRENGTH = 3,
+		STAT_ENDURANCE = 2,
+		STAT_CONSTITUTION = 2,
+		STAT_INTELLIGENCE = -2,
+		STAT_PERCEPTION = -2,
+		STAT_SPEED = -1
 		/datum/attribute/skill/combat/axesmaces = 30,
 		/datum/attribute/skill/combat/shields = 30,
 		/datum/attribute/skill/combat/wrestling = 20,
@@ -22,11 +29,6 @@
 		/datum/attribute/skill/misc/athletics = 20,
 		/datum/attribute/skill/misc/medicine = 10,
 	)
-
-	traits = list(
-		TRAIT_HEAVYARMOR,
-	)
-
 
 /datum/outfit/copper_legion/copperbrute
 	name = "Copper Brute (Migrant)"

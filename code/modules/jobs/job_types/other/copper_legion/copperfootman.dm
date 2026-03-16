@@ -6,11 +6,17 @@
 	category_tags = list(CTAG_COPPERGARRISON)
 	cmode_music = 'sound/music/cmode/towner/CombatBeggar.ogg'
 
+	attribute_sheet = /datum/attribute_holder/sheet/job/copperfootman
+
+	traits = list(
+		TRAIT_MEDIUMARMOR,
+	)
+
 /datum/attribute_holder/sheet/job/copperfootman
 	raw_attribute_list = list(
-		STATKEY_STR = 1,
-		STATKEY_END = 1,
-		STATKEY_CON = 1,
+		STAT_STRENGTH = 1,
+		STAT_ENDURANCE = 1,
+		STAT_CONSTITUTION = 1,
 		/datum/attribute/skill/combat/shields = 30,
 		/datum/attribute/skill/combat/wrestling = 20,
 		/datum/attribute/skill/combat/unarmed = 20,
@@ -22,9 +28,6 @@
 		/datum/attribute/skill/misc/medicine = 10,
 	)
 
-	traits = list(
-		TRAIT_MEDIUMARMOR,
-	)
 
 /datum/job/advclass/copper_legion/copperfootman/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()

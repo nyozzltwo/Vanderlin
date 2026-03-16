@@ -6,13 +6,19 @@
 	category_tags = list(CTAG_COPPERGARRISON)
 	cmode_music = 'sound/music/cmode/towner/CombatBeggar.ogg'
 
+	attribute_sheet = /datum/attribute_holder/sheet/job/copperknight
+
+	traits = list(
+		TRAIT_HEAVYARMOR,
+	)
+
 /datum/attribute_holder/sheet/job/copperknight
 	raw_attribute_list = list(
-		STATKEY_STR = 2,
-		STATKEY_END = 2,
-		STATKEY_CON = 2,
-		STATKEY_PER = 1,
-		STATKEY_SPD = 1,
+		STAT_STRENGTH = 2,
+		STAT_ENDURANCE = 2,
+		STAT_CONSTITUTION = 2,
+		STAT_PERCEPTION = 1,
+		STAT_SPEED = 1,
 		/datum/attribute/skill/combat/polearms = 30,
 		/datum/attribute/skill/combat/shields = 20,
 		/datum/attribute/skill/combat/wrestling = 20,
@@ -26,9 +32,6 @@
 		/datum/attribute/skill/misc/medicine = 10,
 	)
 
-	traits = list(
-		TRAIT_HEAVYARMOR,
-	)
 
 /datum/job/advclass/copper_legion/copperknight/after_spawn(mob/living/carbon/human/spawned, client/player_client)
 	. = ..()
